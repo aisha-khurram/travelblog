@@ -124,19 +124,23 @@ const destinationsData: Record<DestinationKey, DestinationInfo> = {
         ],
         activities: [
             'Mountain Hiking',
+            'Cultural Tours',
+            'Photography',
+            'Local Food Tasting',
+            'Fort Exploration',
+            'Nature Walks'
         ]
     },
-
 };
 
 type DestinationPageProps = {
-    params: {
+    params: Promise<{
         destination: string;
-    };
+    }>;
 };
 
-export default function destination({ params }: DestinationPageProps) {
-    const { destination } = params;
+export default async function destination({ params }: DestinationPageProps) {
+    const { destination } = await params;
 
     // Ensure the destination is a valid key
     const destinationKey = destination.toLowerCase() as DestinationKey;
