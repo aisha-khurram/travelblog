@@ -1,6 +1,7 @@
 'use client';
 
 import Header  from '../Components/Header';
+import Footer from '../Components/Footer';
 import Link from 'next/link';
 
 export default function PoliciesPage() {
@@ -168,6 +169,9 @@ export default function PoliciesPage() {
                     </div>
                 </div>
             </section>
+
+            <Footer />
         </div>
     );
 }
+
